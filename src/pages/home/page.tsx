@@ -1,7 +1,9 @@
 const Home = () => {
   return (
     <div>
-      <h1>Home Page</h1>
+      <div className="bg-red-500 text-white p-4">
+  Tailwind 테스트
+</div>
     </div>
   );
 };
