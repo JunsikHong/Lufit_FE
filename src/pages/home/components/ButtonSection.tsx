@@ -24,7 +24,7 @@ const ButtonSection = () => {
         </button>
 
         <button
-          onClick={() => navigate('/ai-health')}
+          onClick={() => navigate('/health')}
           className="relative h-44 bg-green-500 text-white rounded-2xl p-5 overflow-hidden 
                    hover:scale-[1.03] active:scale-[0.97] transition text-left"
         >

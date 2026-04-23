@@ -1,3 +1,5 @@
+import Button from "@/pages/common/Button";
+
 const TodoSection = () => {
     const hasRoutine = true;
 
@@ -25,9 +27,9 @@ const TodoSection = () => {
                 <div>
                     <div className="flex justify-between items-center mb-3">
                         <div className="font-semibold">오늘의 건강 습관</div>
-                        <span className="text-xs text-gray-400 cursor-pointer">
+                        <Button className="text-xs text-gray-400 cursor-pointer">
                             전체보기
-                        </span>
+                        </Button>
                     </div>
                     <div className="space-y-2">
                         {todos.map((todo, i) => (

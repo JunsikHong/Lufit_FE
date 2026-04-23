@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import Button from "@/pages/common/Button";
 
 const UserProfileSection = () => {
     const messages = [
@@ -57,9 +58,9 @@ const UserProfileSection = () => {
                     />
                 </div>
             </div>
-            <div className="flex justify-between text-sm text-gray-600 pt-2 border-t">
-                <div className="cursor-pointer hover:text-black">크레딧 120</div>
-                <div className="cursor-pointer hover:text-black">쿠폰 / 패스</div>
+            <div className="flex justify-between text-sm text-gray-600 pt-3 border-t">
+                <Button className="hover:text-black">크레딧 120</Button>
+                <Button className="hover:text-black">쿠폰 / 패스</Button>
             </div>
         </div>
     );

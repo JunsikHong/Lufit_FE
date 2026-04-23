@@ -1,3 +1,5 @@
+import Button from "@/pages/common/Button";
+
 import { useNavigate } from 'react-router-dom';
 
 const BoardSection = () => {
@@ -26,12 +28,12 @@ const BoardSection = () => {
       <div className="bg-white rounded-2xl border border-gray-200 p-4">
         <div className="flex justify-between items-center mb-3">
           <span className="font-semibold text-sm">커뮤니티</span>
-          <span
+          <Button
             onClick={() => navigate('/board')}
             className="text-xs text-gray-400 cursor-pointer hover:text-black"
           >
             더보기
-          </span>
+          </Button>
         </div>
 
         <div className="space-y-2">
@@ -51,12 +53,12 @@ const BoardSection = () => {
       <div className="bg-white rounded-2xl border border-gray-200 p-4">
         <div className="flex justify-between items-center mb-3">
           <span className="font-semibold text-sm">공지사항</span>
-          <span
+          <Button
             onClick={() => navigate('/notice')}
             className="text-xs text-gray-400 cursor-pointer hover:text-black"
           >
             더보기
-          </span>
+          </Button>
         </div>
 
         <div className="space-y-2">

@@ -1,27 +1,21 @@
 import { Bell, Menu } from "lucide-react";
+import Button from "@/pages/common/Button";
 
-const Header = () => {
+const Header = ({ onMenuOpen = () => {} }) => {
   return (
     <header className="w-full h-20 border-b border-gray-200 bg-white flex items-center justify-between px-6">
-      
-      {/* 로고 */}
       <div className="text-2xl font-semibold text-green-500 tracking-tight">
         LUFIT
       </div>
-
-      {/* 아이콘 영역 */}
-      <div className="flex items-center gap-5">
-        
-        <button className="p-2.5 rounded-full hover:bg-gray-100 transition">
+      <div className="flex items-center">
+        <Button>
           <Bell className="w-6 h-6 text-gray-700" />
-        </button>
+        </Button>
 
-        <button className="p-2.5 rounded-full hover:bg-gray-100 transition">
+        <Button onClick={onMenuOpen}>
           <Menu className="w-6 h-6 text-gray-700" />
-        </button>
-
+        </Button>
       </div>
-
     </header>
   );
 };
