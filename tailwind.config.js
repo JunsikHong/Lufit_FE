@@ -9,6 +9,9 @@ export default {
       colors: {
         primary: "#22c55e",
       },
+      fontFamily: {
+        pretendard: ['Pretendard', 'sans-serif'],
+      },
     },
   },
   plugins: [],

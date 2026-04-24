@@ -22,10 +22,7 @@ const InputNumber = ({
 
   return (
     <div className="w-full">
-
       {label && <label className="sr-only">{label}</label>}
-
-      {/* 🔥 useModal일 때 */}
       {useModal ? (
         <>
           <div
@@ -39,20 +36,18 @@ const InputNumber = ({
               <span className="text-gray-400">{placeholder}</span>
             )}
           </div>
-
           <NumberInputModal
             open={open}
-            value={value}
+            value={value === "" ? "" : Number(value)}
             onChange={onChange}
             onClose={() => setOpen(false)}
             placeholder={placeholder}
           />
         </>
       ) : (
-        /* 🔥 일반 input */
         <input
           type="number"
-          value={value}
+          value={value === "" ? "" : value}
           placeholder={placeholder}
           onChange={(e) =>
             onChange(e.target.value === "" ? "" : Number(e.target.value))
@@ -66,14 +61,11 @@ const InputNumber = ({
           `}
         />
       )}
-
-      {/* 에러 */}
       <div className="mt-1 min-h-[18px]">
         {error && (
           <p className="text-xs text-red-500">{error}</p>
         )}
       </div>
-
     </div>
   );
 };

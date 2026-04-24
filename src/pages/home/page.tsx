@@ -6,7 +6,7 @@ import BoardSection from "@/pages/home/components/BoardSection";
 
 const Home = () => {
   return (
-    <div className="px-4 py-6 space-y-6">
+    <div className="px-4 space-y-6">
       <UserProfileSection />
       <TodoSection />
       <ButtonSection />

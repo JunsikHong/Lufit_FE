@@ -1,17 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import Button from "@/pages/common/Button";
 
 const SimpleHeader = () => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
     return (
-        <header className="h-16 flex items-center px-6 border-b border-gray-200 bg-white">
-            <button
+        <header className="w-full bg-white flex items-center justify-between px-6 py-4">
+            <Button
                 onClick={() => navigate(-1)}
                 className="flex items-center text-gray-700"
             >
-                <ArrowLeft className="w-5 h-5 mr-2" />
-            </button>
+                <ArrowLeft className="w-6 h-6 text-gray-700" />
+            </Button>
         </header>
     );
 }

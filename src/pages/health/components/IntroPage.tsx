@@ -1,6 +1,6 @@
 const IntroPage = ({ onStart }: { onStart: () => void }) => {
     return (
-        <div className="px-6 py-10 flex flex-col min-h-[calc(100vh-120px)]">
+        <div className="px-6 flex flex-col">
             <div className="mb-8">
                 <h1 className="text-2xl font-semibold text-gray-900 leading-snug">
                     AI 기반으로<br />

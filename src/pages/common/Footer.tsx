@@ -4,7 +4,7 @@ const Footer = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <footer className="w-full border-t  bg-gray-50">
+    <footer className="w-full border-t mt-5 bg-gray-50">
       <div className="mx-auto px-4 py-5 text-xs text-gray-600">
         <div className="flex items-center gap-1">
           <div

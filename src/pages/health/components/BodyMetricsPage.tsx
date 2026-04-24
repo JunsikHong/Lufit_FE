@@ -12,19 +12,15 @@ const BodyMetricsPage = () => {
 
   return (
     <div className="px-6 py-8 flex flex-col gap-6">
-
-      {/* 나이 */}
       <FadeIn show={true}>
         <InputNumber
-            useModal={true}
+          useModal={true}
           label="나이"
           placeholder="나이를 입력해주세요"
           value={age}
           onChange={(value) => setAge(value === "" ? "" : Number(value))}
         />
       </FadeIn>
-
-      {/* 성별 */}
       <FadeIn show={age !== ""}>
         <div className="flex gap-3">
           <InputButton
@@ -39,8 +35,6 @@ const BodyMetricsPage = () => {
           />
         </div>
       </FadeIn>
-
-      {/* 키 */}
       <FadeIn show={gender !== ""}>
         <InputNumber
           label="키"
@@ -49,8 +43,6 @@ const BodyMetricsPage = () => {
           onChange={(value) => setHeight(value === "" ? "" : Number(value))}
         />
       </FadeIn>
-
-      {/* 몸무게 */}
       <FadeIn show={height !== ""}>
         <InputNumber
           label="몸무게"
@@ -59,8 +51,6 @@ const BodyMetricsPage = () => {
           onChange={(value) => setWeight(value === "" ? "" : Number(value))}
         />
       </FadeIn>
-
-      {/* 체지방률 */}
       <FadeIn show={weight !== ""}>
         <InputNumber
           label="체지방률"
@@ -69,14 +59,11 @@ const BodyMetricsPage = () => {
           onChange={(value) => setBodyFat(value === "" ? "" : Number(value))}
         />
       </FadeIn>
-
-      {/* 다음 버튼 */}
       <FadeIn show={bodyFat !== ""}>
         <button className="mt-6 w-full py-4 rounded-full bg-green-500 text-white font-semibold">
           다음
         </button>
       </FadeIn>
-
     </div>
   );
 };

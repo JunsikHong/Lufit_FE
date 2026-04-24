@@ -37,16 +37,12 @@ const InputModal = ({
 
     return (
         <div className="fixed inset-0 z-50 bg-white flex flex-col">
-
-            {/* 상단 입력 영역 */}
             <div className="flex-1 flex flex-col justify-center items-center px-6">
                 <p className="text-gray-400 text-sm mb-2">{placeholder}</p>
                 <div className="text-4xl font-semibold text-gray-900">
                     {value || "0"}
                 </div>
             </div>
-
-            {/* 키패드 */}
             <div className="grid grid-cols-3 gap-4 p-6">
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
                     <button
@@ -57,18 +53,15 @@ const InputModal = ({
                         {n}
                     </button>
                 ))}
-
                 <button onClick={handleDelete} className="py-5 text-lg">
                     ⌫
                 </button>
-
                 <button
                     onClick={() => handleInput(0)}
                     className="py-5 text-xl font-semibold rounded-xl bg-gray-100"
                 >
                     0
                 </button>
-
                 <button
                     onClick={onClose}
                     className="py-5 text-green-600 font-semibold"

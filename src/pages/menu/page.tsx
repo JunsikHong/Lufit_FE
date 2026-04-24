@@ -1,0 +1,27 @@
+import NavigationSection from "@/pages/menu/components/NavigationSection";
+import UserProfileSection from "@/pages/home/components/UserProfileSection";
+import BannerSection from "@/pages/menu/components/BannerSection";
+import { Settings, LogOut } from "lucide-react";
+import Button from "@/pages/common/Button";
+
+const MenuPage = () => {
+    return (
+        <div className="absolute inset-0 z-50 bg-white flex flex-col overflow-y-auto px-4 space-y-6">
+            <UserProfileSection/>
+            <BannerSection />
+            <NavigationSection />
+            <div className="mt-3 px-6 py-6 flex justify-end gap-3">
+                <Button className="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-gray-100 transition">
+                    <Settings className="w-6 h-6 text-gray-700" />
+                    <span className="font-medium">설정</span>
+                </Button>
+                <Button className="flex items-center gap-4 px-4 py-3 rounded-full text-red-500 hover:bg-red-50 transition">
+                    <LogOut className="w-6 h-6" />
+                    <span className="font-medium">로그아웃</span>
+                </Button>
+            </div>
+        </div>
+    );
+}
+
+export default MenuPage;
