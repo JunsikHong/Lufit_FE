@@ -1,9 +1,12 @@
 import NavigationSection from "@/pages/menu/components/NavigationSection";
 import BannerSection from "@/pages/menu/components/BannerSection";
-import { Settings, LogOut } from "lucide-react";
+import { Settings, LogOut, LogIn } from "lucide-react";
 import Button from "@/pages/common/Button";
+import { useUser } from "@/api/useUser";
 
 const MenuPage = () => {
+    const { data: user } = useUser();
+
     return (
         <div className="absolute inset-0 z-50 bg-white flex flex-col overflow-y-auto px-4 space-y-6">
             <BannerSection />
@@ -13,10 +16,18 @@ const MenuPage = () => {
                     <Settings className="w-6 h-6 text-gray-700" />
                     <span className="font-medium">설정</span>
                 </Button>
-                <Button className="flex items-center gap-4 px-4 py-3 rounded-full text-red-500 hover:bg-red-50 transition">
-                    <LogOut className="w-6 h-6" />
-                    <span className="font-medium">로그아웃</span>
-                </Button>
+                {user ? (
+                    <Button className="flex items-center gap-4 px-4 py-3 rounded-full text-red-500 hover:bg-red-50 transition">
+                        <LogOut className="w-6 h-6" />
+                        <span className="font-medium">로그아웃</span>
+                    </Button>
+                ) : (
+                    <Button className="flex items-center gap-4 px-4 py-3 rounded-full text-black-500 hover:bg-gray-100 transition">
+                        <LogIn className="w-6 h-6" />
+                        <span className="font-medium">로그인</span>
+                    </Button>
+                )}
+
             </div>
         </div>
     );

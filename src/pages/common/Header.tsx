@@ -26,10 +26,10 @@ const Header = ({
     <header className="w-full bg-white flex items-center justify-between px-6 py-4">
       <button 
         onClick={() => navigate('/')}
-        className="text-2xl font-semibold text-green-500 tracking-tight">
+        className="text-3xl font-bold text-green-500 tracking-tight">
         LUFIT
       </button>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1">
         <Button
           onClick={
             isNotification ? () => navigate('/notification/settings') : onNotificationOpen

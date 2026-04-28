@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
 
 interface InputPasswordProps {
   value: string;
@@ -42,9 +43,9 @@ const InputPassword = ({
           className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
         >
           {show ? (
-            <span>🙈</span>
+            <Eye size={18}></Eye>
           ) : (
-            <span>👁️</span>
+            <EyeOff size={18}></EyeOff>
           )}
         </button>
       </div>

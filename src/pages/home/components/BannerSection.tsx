@@ -26,7 +26,7 @@ const BannerSection = () => {
             <Swiper
                 modules={[Autoplay]}
                 spaceBetween={12}
-                slidesPerView={1.05}
+                slidesPerView={1.2}
                 centeredSlides={true}
                 grabCursor={true}
                 autoplay={{

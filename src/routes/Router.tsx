@@ -4,6 +4,7 @@ import PrivateRoute from "@/routes/PrivateRouter";
 import PublicRoute from "@/routes/PublicRouter";
 import DefaultLayout from "@/pages/layouts/DefaultLayout";
 import SimpleLayout from "@/pages/layouts/SimpleLayout";
+import BoardLayout from "@/pages/layouts/BoardLayout";
 import Home from "@/pages/home/page";
 import PolicyPage from "@/pages/policy/page";
 import CommunityListPage from "@/pages/board/community/list/page";
@@ -45,7 +46,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/community",
-    element: <DefaultLayout />,
+    element: <BoardLayout />,
     children: [
       {
         index: true,
@@ -55,7 +56,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/community/:id",
-    element: <DefaultLayout />,
+    element: <BoardLayout />,
     children: [
       {
         index: true,
@@ -65,7 +66,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/faq",
-    element: <DefaultLayout />,
+    element: <BoardLayout />,
     children: [
       {
         index: true,
@@ -75,7 +76,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/faq/:id",
-    element: <DefaultLayout />,
+    element: <BoardLayout />,
     children: [
       {
         index: true,
@@ -85,7 +86,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/notice",
-    element: <DefaultLayout />,
+    element: <BoardLayout />,
     children: [
       {
         index: true,
@@ -95,7 +96,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/notice/:id",
-    element: <DefaultLayout />,
+    element: <BoardLayout />,
     children: [
       {
         index: true,
@@ -143,7 +144,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/community/write",
-        element: <DefaultLayout />,
+        element: <BoardLayout />,
         children: [{ index: true, element: <CommunityWritePage /> }],
       },
     ],
@@ -153,12 +154,12 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/faq/write",
-        element: <DefaultLayout />,
+        element: <BoardLayout />,
         children: [{ index: true, element: <FaqWritePage /> }],
       },
       {
         path: "/notice/write",
-        element: <DefaultLayout />,
+        element: <BoardLayout />,
         children: [{ index: true, element: <NoticeWritePage /> }],
       },
     ],

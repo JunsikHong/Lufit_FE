@@ -29,7 +29,7 @@ const BoardSection = () => {
         <div className="flex justify-between items-center mb-3">
           <span className="font-semibold text-sm">커뮤니티</span>
           <Button
-            onClick={() => navigate('/board')}
+            onClick={() => navigate('/community')}
             className="text-xs text-gray-400 cursor-pointer hover:text-black"
           >
             더보기
