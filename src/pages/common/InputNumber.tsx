@@ -61,7 +61,7 @@ const InputNumber = ({
           `}
         />
       )}
-      <div className="mt-1 min-h-[18px]">
+      <div className="mt-1 min-h-[12px]">
         {error && (
           <p className="text-xs text-red-500">{error}</p>
         )}

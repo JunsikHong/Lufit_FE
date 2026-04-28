@@ -1,0 +1,5 @@
+const FaqListPage = () => {
+  return <div></div>;
+}
+
+export default FaqListPage;

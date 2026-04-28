@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-import 'swiper/css';
+import 'swiper/swiper-bundle.css';
 
 const BannerSection = () => {
     const banners = [
@@ -26,7 +26,9 @@ const BannerSection = () => {
             <Swiper
                 modules={[Autoplay]}
                 spaceBetween={12}
-                slidesPerView={1.1}
+                slidesPerView={1.05}
+                centeredSlides={true}
+                grabCursor={true}
                 autoplay={{
                     delay: 3000,
                     disableOnInteraction: false,

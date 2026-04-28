@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
   return (
@@ -37,13 +39,22 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-wrap gap-3 text-xs mb-1">
-          <button className="px-2 py-1 border border-gray-300 rounded-md hover:bg-gray-100 transition">
+          <button 
+            onClick={() => navigate('/policy/privacy')}
+            className="px-2 py-1 border border-gray-300 rounded-md hover:bg-gray-100 transition"
+          >
             개인정보처리방침
           </button>
-          <button className="px-2 py-1 border border-gray-300 rounded-md hover:bg-gray-100 transition">
+          <button 
+            onClick={() => navigate('/policy/terms')}
+            className="px-2 py-1 border border-gray-300 rounded-md hover:bg-gray-100 transition"
+          >
             이용약관과정책
           </button>
-          <button className="px-2 py-1 border border-gray-300 rounded-md hover:bg-gray-100 transition">
+          <button 
+            onClick={() => navigate('/faq')}
+            className="px-2 py-1 border border-gray-300 rounded-md hover:bg-gray-100 transition"
+          >
             자주묻는질문
           </button>
         </div>

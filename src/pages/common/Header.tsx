@@ -1,5 +1,6 @@
 import { X, Bell, Menu, Settings } from "lucide-react";
 import Button from "@/pages/common/Button";
+import { useNavigate } from "react-router-dom";
 
 type View = "home" | "menu" | "notification";
 
@@ -16,20 +17,22 @@ const Header = ({
   onMenuOpen,
   onMenuClose,
   onNotificationOpen,
-  onNotificationClose,
 }: Props) => {
   const isMenu = view === "menu";
   const isNotification = view === "notification";
+  const navigate = useNavigate();
 
   return (
     <header className="w-full bg-white flex items-center justify-between px-6 py-4">
-      <div className="text-2xl font-semibold text-green-500 tracking-tight">
+      <button 
+        onClick={() => navigate('/')}
+        className="text-2xl font-semibold text-green-500 tracking-tight">
         LUFIT
-      </div>
+      </button>
       <div className="flex items-center gap-2">
         <Button
           onClick={
-            isNotification ? onNotificationClose : onNotificationOpen
+            isNotification ? () => navigate('/notification/settings') : onNotificationOpen
           }
         >
           {isNotification ? (
