@@ -19,7 +19,23 @@ const BannerSection = () => {
             desc: '가볍게 10분 스트레칭 해보세요',
             emoji: '🧘‍♂️',
         },
+        {
+            title: '영양补给',
+            desc: '오늘은 채소 많이 드셨나요?',
+            emoji: '🥗',
+        },
+        {
+            title: '스트레스 관리',
+            desc: '심호흡 한 번 해보세요',
+            emoji: '🫁',
+        },
+        {
+            title: '걸음 수 체크',
+            desc: '오늘 5,000보 걸으셨나요?',
+            emoji: '👟',
+        },
     ];
+
 
     return (
         <div>
@@ -34,10 +50,11 @@ const BannerSection = () => {
                     disableOnInteraction: false,
                 }}
                 loop={true}
+                speed={600}
             >
                 {banners.map((banner, index) => (
-                    <SwiperSlide key={index}>
-                        <div className="bg-gradient-to-r from-green-100 to-green-200 rounded-2xl p-5 flex items-center justify-between h-full">
+                    <SwiperSlide key={index} style={{ width: 'calc((100% - 48px) / 1.2)' }}>
+                        <div className="bg-gradient-to-r from-green-100 to-green-200 rounded-2xl p-5 flex items-center justify-between h-full min-h-[100px]">
                             <div>
                                 <div className="text-lg font-semibold">{banner.title}</div>
                                 <div className="text-sm text-gray-600 mt-1">

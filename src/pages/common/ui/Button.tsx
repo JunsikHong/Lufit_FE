@@ -1,4 +1,4 @@
-const Button = ({ children, className = "", ...props }) => {
+const Button = ({ children, className = "", ...props }: any) => {
   return (
     <button
       className={`

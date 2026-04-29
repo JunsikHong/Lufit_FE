@@ -1,5 +1,5 @@
-import NavigationSection from "@/pages/menu/components/NavigationSection";
-import BannerSection from "@/pages/menu/components/BannerSection";
+import NavigationSection from "@/pages/common/menu/components/NavigationSection";
+import BannerSection from "@/pages/common/menu/components/BannerSection";
 import { Settings, LogOut, LogIn } from "lucide-react";
 import Button from "@/pages/common/ui/Button";
 import { useUser } from "@/api/useUser";

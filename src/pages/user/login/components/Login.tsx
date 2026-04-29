@@ -84,7 +84,7 @@ const Login = () => {
                         className="h-5 object-contain"
                     />
                     <span className="text-sm font-semibold text-black">
-                        애플 로그인
+                        Apple 로그인
                     </span>
                 </button>
                 <button className="w-full h-12 rounded-xl bg-white border border-gray-300 flex items-center justify-center gap-2 active:scale-[0.98] transition">
@@ -94,7 +94,7 @@ const Login = () => {
                         className="h-5 object-contain"
                     />
                     <span className="text-sm font-semibold text-black">
-                        구글 로그인
+                        Google 로그인
                     </span>
                 </button>
             </div>

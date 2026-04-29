@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Header from "@/pages/common/layout/Header";
 import Footer from "@/pages/common/layout/Footer";
-import MenuPage from "@/pages/menu/page";
-import NotificationPage from "@/pages/notification/page";
+import MenuPage from "@/pages/common/menu/page";
+import NotificationPage from "@/pages/common/notification/page";
 import { Outlet } from "react-router-dom";
 import RightDrawer from "@/pages/common/overlay/RightDrawer";
 
