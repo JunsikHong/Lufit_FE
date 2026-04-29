@@ -1,10 +1,12 @@
 import NavigationSection from "@/pages/menu/components/NavigationSection";
 import BannerSection from "@/pages/menu/components/BannerSection";
 import { Settings, LogOut, LogIn } from "lucide-react";
-import Button from "@/pages/common/Button";
+import Button from "@/pages/common/ui/Button";
 import { useUser } from "@/api/useUser";
+import { useNavigate } from "react-router-dom";
 
 const MenuPage = () => {
+    const navigate = useNavigate();
     const { data: user } = useUser();
 
     return (
@@ -22,7 +24,10 @@ const MenuPage = () => {
                         <span className="font-medium">로그아웃</span>
                     </Button>
                 ) : (
-                    <Button className="flex items-center gap-4 px-4 py-3 rounded-full text-black-500 hover:bg-gray-100 transition">
+                    <Button 
+                        onClick={() => navigate("/login")}
+                        className="flex items-center gap-4 px-4 py-3 rounded-full text-black-500 hover:bg-gray-100 transition"
+                    >
                         <LogIn className="w-6 h-6" />
                         <span className="font-medium">로그인</span>
                     </Button>

@@ -1,4 +1,4 @@
-import BoardHeader from "@/pages/common/BoardHeader";
+import BoardHeader from "@/pages/common/layout/BoardHeader";
 import { Outlet } from "react-router-dom";
 
 const BoardLayout = () => {

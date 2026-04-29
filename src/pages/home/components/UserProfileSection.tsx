@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-import Button from "@/pages/common/Button";
+import Button from "@/pages/common/ui/Button";
 
 const UserProfileSection = () => {
     const messages = [

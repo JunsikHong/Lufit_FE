@@ -1,4 +1,4 @@
-import SimpleHeader from "@/pages/common/SimpleHeader";
+import SimpleHeader from "@/pages/common/layout/SimpleHeader";
 import { Outlet } from "react-router-dom";
 
 const SimpleLayout = () => {

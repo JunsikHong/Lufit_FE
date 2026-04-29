@@ -1,4 +1,4 @@
-import Button from "@/pages/common/Button";
+import Button from "@/pages/common/ui/Button";
 
 const TodoSection = () => {
     const hasRoutine = true;

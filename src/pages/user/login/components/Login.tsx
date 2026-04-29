@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "@/pages/common/Button";
-import InputString from "@/pages/common/InputString";
-import InputPassword from "@/pages/common/InputPassword";
+import Button from "@/pages/common/ui/Button";
+import InputString from "@/pages/common/ui/InputString";
+import InputPassword from "@/pages/common/ui/InputPassword";
 import kakaoLoginImg from "@/assets/kakao_login.png";
 import naverLoginImg from "@/assets/naver_login.png";
 import appleLoginImg from "@/assets/apple_login.png";

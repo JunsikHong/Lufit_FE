@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NumberInputModal from "@/pages/common/InputModal";
+import NumberInputModal from "@/pages/common/ui/InputModal";
 
 interface InputNumberProps {
   value: string | number;

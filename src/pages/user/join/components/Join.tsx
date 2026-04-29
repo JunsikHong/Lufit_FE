@@ -1,6 +1,6 @@
 import { useState } from "react";
-import InputString from "@/pages/common/InputString";
-import InputPassword from "@/pages/common/InputPassword";
+import InputString from "@/pages/common/ui/InputString";
+import InputPassword from "@/pages/common/ui/InputPassword";
 
 const Join = () => {
     const [form, setForm] = useState({

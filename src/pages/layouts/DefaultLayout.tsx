@@ -1,14 +1,16 @@
 import { useState } from "react";
-import Header from "@/pages/common/Header";
-import Footer from "@/pages/common/Footer";
+import Header from "@/pages/common/layout/Header";
+import Footer from "@/pages/common/layout/Footer";
 import MenuPage from "@/pages/menu/page";
 import NotificationPage from "@/pages/notification/page";
 import { Outlet } from "react-router-dom";
+import RightDrawer from "@/pages/common/overlay/RightDrawer";
 
 type View = "home" | "menu" | "notification";
 
 const DefaultLayout = () => {
   const [view, setView] = useState<View>("home");
+  const closeDrawer = () => setView("home");
 
   return (
     <div className="layout flex flex-col min-h-screen items-center">
@@ -24,10 +26,14 @@ const DefaultLayout = () => {
           <div>
             <Outlet />
           </div>
-          {view === "menu" && <MenuPage />}
-          {view === "notification" && <NotificationPage />}
         </main>
         <Footer />
+        <RightDrawer open={view === "menu"} onClose={closeDrawer}>
+          <MenuPage />
+        </RightDrawer>
+        <RightDrawer open={view === "notification"} onClose={closeDrawer}>
+          <NotificationPage />
+        </RightDrawer>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import InputNumber from "@/pages/common/InputNumber";
-import FadeIn from "@/pages/common/FadeIn";
-import InputButton from "@/pages/common/InputButton";
+import InputNumber from "@/pages/common/ui/InputNumber";
+import FadeIn from "@/pages/common/overlay/FadeIn";
+import InputButton from "@/pages/common/ui/InputButton";
 
 const BodyMetricsPage = () => {
   const [age, setAge] = useState<number | "">("");
