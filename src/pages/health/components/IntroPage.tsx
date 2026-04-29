@@ -26,7 +26,7 @@ const IntroPage = ({ onStart }: { onStart: () => void }) => {
             <div className="mt-auto">
                 <button
                     onClick={onStart}
-                    className="w-full py-4 rounded-full bg-green-500 text-white font-semibold text-base hover:bg-green-600 transition"
+                    className="w-full py-4 rounded bg-green-500 text-white font-semibold text-base hover:bg-green-600 transition"
                 >
                     시작하기
                 </button>

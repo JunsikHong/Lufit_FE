@@ -125,7 +125,8 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    element: <PrivateRoute />,
+    element: <PublicRoute />,
+    // element: <PrivateRoute />,
     children: [
       {
         path: "/notification/:type",
@@ -150,7 +151,8 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    element: <AdminRoute />,
+    element: <PublicRoute />,
+    // element: <AdminRoute />,
     children: [
       {
         path: "/faq/write",

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Heart, MessageCircle } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 import BoardMenu from "@/pages/board/common/menu";
 
 export interface PostItem {
@@ -19,6 +20,18 @@ interface ListProps {
 
 const List = ({ posts }: ListProps) => {
   const [openMenuId, setOpenMenuId] = useState<number | null>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const getBoardPath = () => {
+    const pathSegment = location.pathname.split("/")[1];
+    return pathSegment;
+  };
+
+  const handlePostClick = (postId: number) => {
+    const board = getBoardPath();
+    navigate(`/${board}/${postId}`);
+  };
 
   return (
     <div>
@@ -26,7 +39,11 @@ const List = ({ posts }: ListProps) => {
         const isOpen = openMenuId === post.id;
 
         return (
-          <div key={post.id} className="bg-white border-b p-4 relative">
+          <div
+            key={post.id}
+            className="bg-white border-b p-4 relative cursor-pointer hover:bg-gray-50 transition-colors"
+            onClick={() => handlePostClick(post.id)}
+          >
             {/* top */}
             <div className="flex justify-between items-center mb-2">
               <span className="text-xs bg-gray-100 px-2 py-1 rounded">
@@ -36,9 +53,10 @@ const List = ({ posts }: ListProps) => {
               <div className="relative">
                 <button
                   className="text-gray-500"
-                  onClick={() =>
-                    setOpenMenuId(isOpen ? null : post.id)
-                  }
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setOpenMenuId(isOpen ? null : post.id);
+                  }}
                 >
                   ⋯
                 </button>
