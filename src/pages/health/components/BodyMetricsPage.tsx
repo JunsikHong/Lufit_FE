@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InputNumber from "@/pages/common/ui/InputNumber";
 import InputRadio from "@/pages/common/ui/InputRadio";
+import CtaButton from "@/pages/common/ui/CtaButton";
 
 const BodyMetricsPage = ({ onNext }: { onNext: () => void }) => {
   const [age, setAge] = useState<number | "">("");
@@ -43,9 +44,13 @@ const BodyMetricsPage = ({ onNext }: { onNext: () => void }) => {
         value={bodyFat}
         onChange={(value) => setBodyFat(value === "" ? "" : Number(value))}
       />
-      <button className="mt-6 w-full py-4 rounded-full bg-green-500 text-white font-semibold" onClick={onNext}>
-        다음
-      </button>
+      <CtaButton
+        label="다음"
+        onClick={onNext}
+        bgColor="bg-green-500"
+        textColor="text-white"
+        disabled={age === "" || gender === "" || height === "" || weight === "" || bodyFat === ""}
+      />
     </div>
   );
 };

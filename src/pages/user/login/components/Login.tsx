@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "@/pages/common/ui/Button";
+import CtaButton from "@/pages/common/ui/CtaButton";
 import InputString from "@/pages/common/ui/InputString";
 import InputPassword from "@/pages/common/ui/InputPassword";
 import kakaoLoginImg from "@/assets/kakao_login.png";
@@ -13,6 +14,10 @@ const Login = () => {
 
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
+
+    const handleLogin = () => {
+
+    }
 
     return (
         <div className="w-full max-w-md bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
@@ -40,11 +45,13 @@ const Login = () => {
                     />
                 </div>
             </div>
-            <button
-                className="w-full h-12 rounded-xl bg-black text-white font-bold active:scale-[0.98] transition mb-4"
-            >
-                로그인
-            </button>
+            <CtaButton
+                label="로그인"
+                onClick={handleLogin}
+                bgColor="bg-black"
+                textColor="text-white"
+                disabled={!id || !password}
+            />
             <div className="flex justify-between text-sm text-gray-500 mb-4">
                 <Button onClick={() => navigate("/forget")}>
                     비밀번호 찾기

@@ -5,6 +5,7 @@ import PublicRoute from "@/routes/PublicRouter";
 import DefaultLayout from "@/layouts/DefaultLayout";
 import SimpleLayout from "@/layouts/SimpleLayout";
 import BoardLayout from "@/layouts/BoardLayout";
+import HealthLayout from "@/layouts/HealthLayout";
 import Home from "@/pages/home/page";
 import PolicyPage from "@/pages/policy/page";
 import CommunityListPage from "@/pages/board/community/list/page";
@@ -18,7 +19,7 @@ import NoticeDetailPage from "@/pages/board/notice/detail/page";
 import NoticeWritePage from "@/pages/board/notice/write/page";
 import HealthPage from "@/pages/health/page";
 import RoutinePage from "@/pages/routine/page";
-import NotificationPage from "@/pages/common/notification/page";
+import NotificationSettingsPage from "@/pages/common/notification/settings/page";
 import LoginPage from "@/pages/user/login/page";
 import JoinPage from "@/pages/user/join/page";
 import ForgetPage from "@/pages/user/forget/page";
@@ -129,9 +130,9 @@ export const router = createBrowserRouter([
     // element: <PrivateRoute />,
     children: [
       {
-        path: "/notification/:type",
+        path: "/notification/settings",
         element: <DefaultLayout />,
-        children: [{ index: true, element: <NotificationPage /> }],
+        children: [{ index: true, element: <NotificationSettingsPage /> }],
       },
       {
         path: "/routine",
@@ -140,7 +141,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/health",
-        element: <SimpleLayout />,
+        element: <HealthLayout />,
         children: [{ index: true, element: <HealthPage /> }],
       },
       {

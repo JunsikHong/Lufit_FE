@@ -1,4 +1,4 @@
-import Button from "@/pages/common/ui/Button";
+import CtaButton from "@/pages/common/ui/CtaButton";
 import { useNavigate } from "react-router-dom";
 const UnAuthenticationSection = () => {
     const navigate = useNavigate();
@@ -13,18 +13,16 @@ const UnAuthenticationSection = () => {
                 </div>
             </div>
             <div className="flex gap-2">
-                <Button
+                <CtaButton
                     className="flex-1"
                     onClick={() => navigate('/login')}
-                >
-                    로그인
-                </Button>
-                <Button
+                    label="로그인"                
+                />
+                <CtaButton
                     className="flex-1"
                     onClick={() => navigate('/join')}
-                >
-                    회원가입
-                </Button>
+                    label="회원가입"
+                />  
             </div>
             <div className="text-xs text-gray-400 text-center">
                 가입하면 크레딧과 다양한 혜택을 받을 수 있어요

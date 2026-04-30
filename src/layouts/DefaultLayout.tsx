@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Header from "@/pages/common/layout/Header";
-import Footer from "@/pages/common/layout/Footer";
+import DefaultHeader from "@/pages/common/layout/DefaultHeader";
+import DefaultFooter from "@/pages/common/layout/DefaultFooter";
 import MenuPage from "@/pages/common/menu/page";
-import NotificationPage from "@/pages/common/notification/page";
+import NotificationListPage from "@/pages/common/notification/list/page";
 import { Outlet } from "react-router-dom";
 import RightDrawer from "@/pages/common/overlay/RightDrawer";
 
@@ -15,7 +15,7 @@ const DefaultLayout = () => {
   return (
     <div className="layout flex flex-col min-h-screen items-center">
       <div className="w-full max-w-[750px] relative">
-        <Header
+        <DefaultHeader
           view={view}
           onMenuOpen={() => setView("menu")}
           onMenuClose={() => setView("home")}
@@ -27,12 +27,12 @@ const DefaultLayout = () => {
             <Outlet />
           </div>
         </main>
-        <Footer />
+        <DefaultFooter />
         <RightDrawer open={view === "menu"} onClose={closeDrawer}>
           <MenuPage />
         </RightDrawer>
         <RightDrawer open={view === "notification"} onClose={closeDrawer}>
-          <NotificationPage />
+          <NotificationListPage />
         </RightDrawer>
       </div>
     </div>

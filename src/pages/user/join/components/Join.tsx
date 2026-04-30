@@ -4,6 +4,7 @@ import InputPassword from "@/pages/common/ui/InputPassword";
 import InputButton from "@/pages/common/ui/InputButton";
 import InputCheck from "@/pages/common/ui/InputCheck";
 import Button from "@/pages/common/ui/Button";
+import CtaButton from "@/pages/common/ui/CtaButton";
 
 const Join = () => {
     const [form, setForm] = useState({
@@ -59,6 +60,10 @@ const Join = () => {
         form.phone &&
         agree.terms &&
         agree.privacy;
+
+    const handleJoin = () => {
+
+    }
 
     return (
         <div className="w-full max-w-md bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
@@ -120,7 +125,7 @@ const Join = () => {
                     placeholder="추천인 코드"
                 />
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 mb-6">
                 <h2 className="font-semibold">약관 동의</h2>
                 <div className="p-4 bg-gray-200 rounded-xl">
                     <InputCheck
@@ -226,14 +231,13 @@ const Join = () => {
                     )}
                 </div>
             </div>
-            <button
+            <CtaButton
+                label="회원가입"
+                onClick={handleJoin}
+                bgColor="bg-black"
+                textColor="text-white"
                 disabled={!isValid}
-                className={`w-full h-12 rounded-xl font-semibold mt-6 transition
-                            ${isValid ? "bg-black text-white" : "bg-gray-200 text-gray-400"}`}
-            >
-                회원가입
-            </button>
-
+            />
         </div>
     );
 };

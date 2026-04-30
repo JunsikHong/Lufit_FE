@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Footer = () => {
+const DefaultFooter = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
@@ -69,4 +69,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default DefaultFooter;

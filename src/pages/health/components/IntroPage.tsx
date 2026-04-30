@@ -1,3 +1,5 @@
+import CtaButton from "@/pages/common/ui/CtaButton";
+
 const IntroPage = ({ onStart }: { onStart: () => void }) => {
     return (
         <div className="px-6 flex flex-col">
@@ -23,14 +25,12 @@ const IntroPage = ({ onStart }: { onStart: () => void }) => {
                     지병이 있거나 약을 복용 중이라면 반드시 전문의와 상담 후 이용해주세요.
                 </p>
             </div>
-            <div className="mt-auto">
-                <button
-                    onClick={onStart}
-                    className="w-full py-4 rounded bg-green-500 text-white font-semibold text-base hover:bg-green-600 transition"
-                >
-                    시작하기
-                </button>
-            </div>
+            <CtaButton
+                label="시작하기"
+                onClick={onStart}
+                bgColor="bg-green-500"
+                textColor="text-white"
+            />
         </div>
     );
 };

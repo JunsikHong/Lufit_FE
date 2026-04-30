@@ -12,7 +12,7 @@ interface Props {
   onNotificationClose: () => void;
 }
 
-const Header = ({
+const DefaultHeader = ({
   view,
   onMenuOpen,
   onMenuClose,
@@ -57,4 +57,4 @@ const Header = ({
   );
 };
 
-export default Header;
+export default DefaultHeader;
