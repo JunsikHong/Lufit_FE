@@ -1,5 +1,4 @@
 import HealthHeader from "@/pages/common/layout/HealthHeader";
-import HealthFooter from "@/pages/common/layout/HealthFooter";
 import { Outlet } from "react-router-dom";
 
 const HealthLayout = () => {
