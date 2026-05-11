@@ -140,6 +140,11 @@ export const router = createBrowserRouter([
         children: [{ index: true, element: <RoutinePage /> }],
       },
       {
+        path: "/routine/:type",
+        element: <DefaultLayout />,
+        children: [{ index: true, element: <RoutinePage /> }],
+      },
+      {
         path: "/health",
         element: <HealthLayout />,
         children: [{ index: true, element: <HealthPage /> }],

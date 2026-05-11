@@ -6,7 +6,7 @@ import {
   Moon, 
   CheckCircle2 
 } from 'lucide-react'; // 
-import Button from "../ui/Button";
+import Button from "@/pages/common/ui/Button";
 
 // 각 스텝에 대한 설정 데이터 (아이콘 추가)
 const STEPS = [

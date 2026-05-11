@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useMemo } from "react";
 import {
   Radar,
   RadarChart,
@@ -48,11 +49,18 @@ const ResultPage = () => {
   ];
 
   // ---------------- 인터랙션 ----------------
-  const [activeIndex, setActiveIndex] = useState(
-    monthlyData.length - 1 // 기본 이번달 활성화
-  );
+  const maxScore = Math.max(...monthlyData.map((v) => v.score));
+const minScore = Math.min(...monthlyData.map((v) => v.score));
 
-  const diff = healthScore - monthlyData[monthlyData.length - 2].score;
+const prevScore = monthlyData[monthlyData.length - 2]?.score ?? 0;
+const diff = healthScore - prevScore;
+const getPosition = (score: number) => {
+    // 높이 퍼센트 계산
+    const range = maxScore - minScore || 1;
+
+    // 아래 여백 조금 주기
+    return ((score - minScore) / range) * 120 + 20;
+  };
 
   const recommendations = [
     {
@@ -128,61 +136,93 @@ const ResultPage = () => {
         </div>
       </div>
 
-      {/* 점수 변화 */}
-      <div>
-        <div className="flex justify-between items-center mb-3">
-          <h2 className="font-semibold">건강 점수 변화</h2>
-          <p className="text-sm text-green-500">
-            이번달은 지난달보다 {diff}점 올랐어요
-          </p>
-        </div>
+      {/* 헤더 */}
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="font-semibold text-lg">건강 점수 변화</h2>
 
-        <div className="w-full h-64 bg-white rounded-2xl p-4 shadow-sm">
-          <ResponsiveContainer>
-            <LineChart data={monthlyData}>
-              <XAxis dataKey="month" />
-              <YAxis hide />
-              <Tooltip />
+        <p className="text-sm text-gray-400">
+          이번달은 지난달보다{" "}
+          <span
+            className={`font-bold ${
+              diff >= 0 ? "text-green-500" : "text-red-500"
+            }`}
+          >
+            {Math.abs(diff)}점
+          </span>{" "}
+          {diff >= 0 ? "올랐어요." : "줄었어요."}
+        </p>
+      </div>
 
-              <Line
-                type="monotone"
-                dataKey="score"
-                stroke="#22c55e"
-                strokeWidth={2}
-                isAnimationActive
-                dot={(props: any) => {
-                  const { cx, cy, index, value } = props;
-                  const isActive = index === activeIndex;
+      {/* 차트 */}
+      <div className="bg-white rounded-2xl shadow-sm p-5 overflow-x-auto">
+        <div className="relative min-w-[900px] h-64">
+          {/* 선 */}
+          <svg className="absolute inset-0 w-full h-full">
+            {monthlyData.map((item, index) => {
+              if (index === monthlyData.length - 1) return null;
 
-                  return (
-                    <g
-                      onClick={() => setActiveIndex(index)}
-                      style={{ cursor: "pointer" }}
-                    >
-                      {/* 점 */}
-                      <circle
-                        cx={cx}
-                        cy={cy}
-                        r={isActive ? 6 : 4}
-                        fill={isActive ? "#22c55e" : "#d1d5db"}
-                      />
+              const currentX = 60 + index * 120;
+              const nextX = 60 + (index + 1) * 120;
 
-                      {/* 점수 */}
-                      <text
-                        x={cx}
-                        y={cy - 10}
-                        textAnchor="middle"
-                        fontSize={12}
-                        fill={isActive ? "#22c55e" : "#9ca3af"}
-                      >
-                        {value}
-                      </text>
-                    </g>
-                  );
+              const currentY = 180 - getPosition(item.score);
+              const nextY =
+                180 - getPosition(monthlyData[index + 1].score);
+
+              return (
+                <line
+                  key={index}
+                  x1={currentX}
+                  y1={currentY}
+                  x2={nextX}
+                  y2={nextY}
+                  stroke="#22c55e"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+              );
+            })}
+          </svg>
+
+          {/* 점 + 텍스트 */}
+          {monthlyData.map((item, index) => {
+            const x = 60 + index * 120;
+            const y = 180 - getPosition(item.score);
+
+            const isCurrent = index === monthlyData.length - 1;
+
+            return (
+              <div
+                key={index}
+                className="absolute"
+                style={{
+                  left: x,
+                  top: y,
+                  transform: "translate(-50%, -50%)",
                 }}
-              />
-            </LineChart>
-          </ResponsiveContainer>
+              >
+                {/* 점수 */}
+                <p
+                  className={`text-sm font-semibold mb-2 text-center ${
+                    isCurrent ? "text-green-500" : "text-gray-400"
+                  }`}
+                >
+                  {item.score}
+                </p>
+
+                {/* 점 */}
+                <div
+                  className={`w-4 h-4 rounded-full mx-auto ${
+                    isCurrent ? "bg-green-500" : "bg-gray-300"
+                  }`}
+                />
+
+                {/* 월 */}
+                <p className="text-sm text-gray-500 mt-4 text-center">
+                  {item.month}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
 

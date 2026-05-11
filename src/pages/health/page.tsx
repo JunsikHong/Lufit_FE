@@ -12,7 +12,7 @@ const HealthPage = () => {
   const [step, setStep] = useState("intro");
 
   return (
-    <div>
+    <div className="pb-[70px]">
       {step === "intro" && (
         <IntroPage onStart={() => setStep("body")} />
       )}
